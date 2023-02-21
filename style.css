@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500;600;700&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,500;1,400;1,700&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    background-image: radial-gradient(farthest-corner at 60% 55%,hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper{
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    height: 620px;
+
+   
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1PX solid white;
+    border-radius: 10PX;
+    width: 600px;
+    margin: 10px auto;
+}
+.types{
+    color: white;
+    font-size: 10px;
+    line-height: 0.9;
+    width: 100px;
+    padding: 10px 20px;
+}
+.score{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 10px 20px;
+    border:  1px solid white;
+}
+h2{
+    font-size: 15px;
+}
+#score{
+    font-size: 40px;
+}
+button{
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 10px;
+    width: 90px;
+    height: 25px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    border-radius: 5px;
+}
+
+.pentagon{
+    position: relative;
+    display: flex;
+    margin: 80px auto 0 auto;
+    width: 600px;
+}
+#pentagon{
+    margin: 0 auto;
+}
+#lizard{
+    margin: 15px;
+}
+.lizard{
+    cursor: pointer;
+    border: 14px solid hsl(261, 73%, 60%);
+    height: 114px;
+    width: 114px;
+    background-color: white;
+    border-radius: 50%;
+    left: 150px;
+    bottom: -40px;
+    position: absolute;
+}
+#paper{
+    margin: 15px;
+}
+.paper{
+    cursor: pointer;
+    border: 14px solid hsl(230, 89%, 62%);
+    height: 114px;
+    width: 114px;
+    background-color: white;
+    border-radius: 50%;
+    right: 110px;
+    top: 60px;
+    position: absolute;
+}
+#rock{
+    margin: 20px;
+}
+.rock{
+    cursor: pointer;
+    border: 14px solid hsl(349, 71%, 52%);
+    height: 114px;
+    width: 114px;
+    background-color: white;
+    border-radius: 50%;
+    bottom: -40px;
+    right: 150px;
+    position: absolute;
+}
+#scissors{
+    margin: 15px;
+}
+.scissors{
+    cursor: pointer;
+    border: 14px solid hsl(39, 89%, 49%);
+    height: 114px;
+    width: 114px;
+    background-color: white;
+    border-radius: 50%;
+    top: -50px;
+    left: 240px;
+    position: absolute;
+}
+#spock{
+    margin: 15px 0 15px 25px;
+}
+.spock{
+    cursor: pointer;
+    border: 14px solid hsl(189, 59%, 53%);
+    height: 114px;
+    width: 114px;
+    background-color: white;
+    border-radius: 50%;
+    left: 90px;
+    top: 60px;
+    position: absolute;
+}
+.spock:active{
+    border: 14px solid hsl(189, 100%, 50%);
+    box-shadow: 0 0 50px hsl(189, 100%, 50%);
+}
+.scissors:active{
+    border: 14px solid hsl(39, 100%, 50%);
+    box-shadow: 0 0 50px hsl(39, 100%, 50%);
+}
+.lizard:active{
+    border: 14px solid hsl(261, 67%, 50%);
+    box-shadow: 0 0 50px hsl(261, 100%, 50%);
+}
+.rock:active{
+    border: 14px solid hsl(349, 100%, 50%);
+    box-shadow: 0 0 50px hsl(349, 100%, 50%);
+}
+.paper:active{
+    border: 14px solid hsl(230, 100%, 69%);
+    box-shadow: 0 0 50px hsl(230, 100%, 50%);
+}
+
+.rules__wrapper{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    position: absolute;
+    height: 500px;
+    width: 400px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    box-shadow: 0 0 1000px 50px black;
+}
+.rules{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 20px;
+    margin-bottom: 50px;
+
+}
+.rules__img{
+    margin-left: 25px;
+}
+.close{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+button:active{
+    scale: 1.1;
+}
+.results__wrapper{
+    z-index: 1;
+    width: 700px;
+    height: 400px;
+    position: absolute;
+    border: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 10px;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+}
