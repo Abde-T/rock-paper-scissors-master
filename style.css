@@ -80,6 +80,11 @@ button{
 #pentagon{
     margin: 0 auto;
 }
+.lizard__wrapper{
+    left: 150px;
+    bottom: -40px;
+    position: absolute;
+}
 #lizard{
     margin: 15px;
 }
@@ -90,8 +95,10 @@ button{
     width: 114px;
     background-color: white;
     border-radius: 50%;
-    left: 150px;
-    bottom: -40px;
+}
+.paper__wrapper{
+    right: 110px;
+    top: 60px;
     position: absolute;
 }
 #paper{
@@ -104,8 +111,10 @@ button{
     width: 114px;
     background-color: white;
     border-radius: 50%;
-    right: 110px;
-    top: 60px;
+}
+.rock__wrapper{
+    bottom: -40px;
+    right: 150px;
     position: absolute;
 }
 #rock{
@@ -118,8 +127,10 @@ button{
     width: 114px;
     background-color: white;
     border-radius: 50%;
-    bottom: -40px;
-    right: 150px;
+}
+.scissors__wrapper{
+    top: -50px;
+    left: 240px;
     position: absolute;
 }
 #scissors{
@@ -132,8 +143,10 @@ button{
     width: 114px;
     background-color: white;
     border-radius: 50%;
-    top: -50px;
-    left: 240px;
+}
+.spock__wrapper{
+    left: 90px;
+    top: 60px;
     position: absolute;
 }
 #spock{
@@ -147,9 +160,6 @@ button{
     cursor: pointer;
     overflow: hidden;
     background-color: white;
-    left: 90px;
-    top: 60px;
-    position: absolute;
 }
 .spock:active{
     border: 14px solid hsl(189, 100%, 50%);
@@ -208,11 +218,11 @@ button:active{
     scale: 1.1;
 }
 .results__wrapper{
-    border: 1px solid white;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     z-index: 1;
-    width: 700px;
+    width: 1000px;
     height: 400px;
     position: absolute;
     color: white;
@@ -221,29 +231,29 @@ button:active{
     top: 60%;
     transform: translate(-50%, -50%);
 }
-.User__choice{
-    border: 1px solid white;
-    
+.wrap{
+    margin: 0 50px;
 }
+#User__choice, #computer__choice{
+    margin: 90px auto;
+    scale: 1.8;
+}
+
+#User__choice,
 #computer__choice{
     height: 100px;
     width: 100px;
-    background-color: rgba(0, 0, 0, 0.438);
     border-radius: 50%;
 }
+
 .result{
-  
     line-height: 3;
     text-align: center;
     margin-top: 100px;
     height: 100px;
     font-size: 20px;
+    margin: 52px 25px 0 50px;
 }
-.wrap{
-    height: 100px;
-    
-}
-
 
 .replay{
     width: 150px;

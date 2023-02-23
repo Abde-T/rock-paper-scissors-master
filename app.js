@@ -11,6 +11,7 @@ function showSelection() {
 function hideSelection() {
   document.querySelector(" .results__wrapper").style.display = "none";
   document.querySelector(" .pentagon").style.display = "flex";
+  getResult()
 }
 
 const computerChoise = document.getElementById("computer__choice");
@@ -18,11 +19,14 @@ const playerChoice = document.getElementById("User__choice");
 const scoreDisplay = document.getElementById("score");
 const resultsDisplay = document.getElementById("result");
 
+
 const possibleChoises = Array.from(document.querySelectorAll(".choices"));
 let userChoise;
 let compChoise;
 let score = 0;
 let result;
+
+
 
 possibleChoises.forEach((possibleChoise) =>
   possibleChoise.addEventListener("click", (e) => {
@@ -37,19 +41,6 @@ possibleChoises.forEach((possibleChoise) =>
     getResult();
   })
 );
-
-/*function displayResults(results){
-  resultsDisplay.forEach((resultDisplay, idx) => {
-    setTimeout(() =>{
-      resultDisplay.innerHTML =`<div class="${resultDisplay[idx].name} choices">
-      <img id="lizard" src="./images/icon-${resultDisplay[idx].name}.svg" alt="" onclick="showSelection()">
-    </div>`
-    }, idx*1000)
-  })
-
-}*/
-
-
 
 function generateComputerChoice() {
   const randomNumber = Math.floor(Math.random() * 5) + 1;
@@ -140,14 +131,19 @@ function getResult() {
       result = "YOU WIN";
     }
     
-    if(result==="YOU WIN"){
+    if(result=="YOU WIN"){
       scoreDisplay.innerHTML = score++
-    }else if(result ==="YOU LOSE"){
+    }else if(result =="YOU LOSE"){
       scoreDisplay.innerHTML = score--
-    }else{
+    }else if(result =="YOU LOSE" && score == 0){
       scoreDisplay.innerHTML = score
     }
 
-    resultsDisplay.innerHTML = result;
+    setTimeout(() =>{
+      resultsDisplay.innerHTML = ` <div class="result" >
+      <div id="result">${result}</div>
+      <h1 class="replay" onclick="hideSelection()">PLAY AGAIN</h1>
+    </div>`;
+    }, 1000)
 }
 

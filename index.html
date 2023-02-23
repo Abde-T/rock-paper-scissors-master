@@ -55,84 +55,74 @@
 
       <div class="pentagon">
         <img id="pentagon" src="./images/bg-pentagon.svg" alt="" />
-
-        <div class="lizard choices">
-          <img
+        <div class="lizard__wrapper">
+          <figure class="lizard choices">
+            <img
             id="lizard"
             src="./images/icon-lizard.svg"
             alt=""
             onclick="showSelection()"
-          />
+            />
+          </figure>
         </div>
-        <div class="paper choices">
-          <img
+        <div class="paper__wrapper">
+          <figure class="paper choices">
+            <img
             id="paper"
             src="./images/icon-paper.svg"
             alt=""
             onclick="showSelection()"
-          />
+            />
+          </figure>
         </div>
-        <div class="rock choices">
-          <img
+        <div class="rock__wrapper">
+          <figure class="rock choices">
+            <img
             id="rock"
             src="./images/icon-rock.svg"
             alt=""
             onclick="showSelection()"
-          />
+            />
+          </figure>
         </div>
-        <div class="scissors choices">
-          <img
+        <div class="scissors__wrapper">
+          <figure class="scissors choices">
+            <img
             id="scissors"
             src="./images/icon-scissors.svg"
             alt=""
             onclick="showSelection()"
             />
+          </figure>
         </div>
-        <button class="spock choices">
-          <img
-          id="spock"
-          src="./images/icon-spock.svg"
+        <div class="spock__wrapper">
+          <figure class="spock choices">
+            <img
+            id="spock"
+            src="./images/icon-spock.svg"
             alt=""
             onclick="showSelection()"
             />
-        </button>
+          </figure>
+        </div>
         </div>
           
       <button id="rules__button" onclick="ShowRules()">Rules</button>
 
-       <section class="results__wrapper">
+       <section class="results__wrapper" style="display: none;">
         <div class="wrap">
           <h1>You Picked</h1>
-          <div id="User__choice"> User__choice</div>
+          <div id="User__choice" > User__choice</div>
         </div>
-        <div class="result">
-          <div id="result"></div>
-          <h1 class="replay" onclick="hideSelection()">PLAY AGAIN</h1>
+        <div class="result" >
+          <div id="result" ></div>
+          <h1 class="replay" onclick="hideSelection()" style="display: none;">PLAY AGAIN</h1>
         </div>
         <div class="wrap">
           <h1>The House Picked</h1>
           <div id="computer__choice">computer__choice</div>
         </div>
-        
-
        </section> 
-
-      <!--<div class="results__wrapper" style="display:flex; justify-content: space-between;">
-        <div class="wrapp">
-          <h1 style="display:flex;">You Picked</h1>
-          <div id="User__choice"> User__choice</div>
-        </div>
-
-        <div class="result">
-          <div id="result"></div>
-          <button class="replay" onclick="hideSelection()">PLAY AGAIN</button>
-        </div>
-
-        <div class="wrapp">
-          <h1>The House Picked</h1>
-          <div id="computer__choice"></div>
-        </div>
-      </div>-->
     </div>
 
     <!-- <div class="attribution">
