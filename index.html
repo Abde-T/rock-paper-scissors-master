@@ -27,7 +27,7 @@
       </div>
       <div class="score">
         <h2> SCORE</h2> 
-        <h1 id="score"> 12 </h1>
+        <h1 id="score"> 0 </h1>
       </div>
     </div>
     <div class="rules__wrapper" style="display:none;" >
@@ -40,43 +40,44 @@
     
     <div class="pentagon">
       <img id="pentagon" src="./images/bg-pentagon.svg" alt="">
+      
       <div class="lizard choices">
-        <img id="lizard" src="./images/icon-lizard.svg" alt="">
+        <img id="lizard" src="./images/icon-lizard.svg" alt="" onclick="showSelection()">
       </div>
       <div class="paper choices">
-        <img id="paper"  src="./images/icon-paper.svg" alt="">
+        <img id="paper"  src="./images/icon-paper.svg" alt="" onclick="showSelection()">
       </div>
       <div class="rock choices">
-        <img id="rock" src="./images/icon-rock.svg" alt="">
+        <img id="rock" src="./images/icon-rock.svg" alt="" onclick="showSelection()">
       </div>
       <div class="scissors choices">
-        <img id="scissors" src="./images/icon-scissors.svg" alt="">
+        <img id="scissors" src="./images/icon-scissors.svg" alt="" onclick="showSelection()">
       </div>
       <div class="spock choices">
-        <img id="spock" src="./images/icon-spock.svg" alt="">
+        <img id="spock" src="./images/icon-spock.svg" alt="" onclick="showSelection()">
       </div>
     </div>
       
 
     <button id="rules__button" onclick="ShowRules()"> Rules </button> 
     
-    <div class="results__wrapper">
-      <div>
-        <h1> You Picked </h1>
-        <div id="User__choice">
+    <div class="results__wrapper" style="display:none;">
+        
+          <h1> You Picked </h1>
+          <div id="User__choice"></div>
+        
+    
 
-        </div>
-      </div>
-      <div class="result" style="display: none;">
-        
+      <div class="result">
         <div id="result"></div>
+        <button class="replay"> PLAY AGAIN  </button> 
+      </div> 
+
         
-        Play Again
-      </div>  
-      <div>
-        <h1> The House Picked </h1>
-        <div id="computer__choice"></div>
-      </div>
+          <h1> The House Picked </h1>
+          <div id="computer__choice"></div>
+        
+     
 
     </div>
   </div>

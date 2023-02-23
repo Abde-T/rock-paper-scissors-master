@@ -207,16 +207,24 @@ button:active{
     scale: 1.1;
 }
 .results__wrapper{
+    display: flex;
+    border:  1px solid white;
     z-index: 1;
     width: 700px;
     height: 400px;
     position: absolute;
-    border: 1px solid white;
-    display: flex;
-    justify-content: space-between;
     color: white;
     font-size: 10px;
     left: 50%;
     top: 60%;
     transform: translate(-50%, -50%);
+}
+.result{
+    font-size: 20px;
+}
+.replay{
+    width: 150px;
+    background-color: white;
+    color: rgb(3, 3, 75);
+    font-weight: 700;
 }
