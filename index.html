@@ -1,91 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
-  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
 
-  
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
     </style>
-</head>
-<body>
-  <div class="wrapper">
-    <div class="header">
-      <div class="types">
-        <h1>ROCK </h1>
-        <h1>PAPER</h1>
-        <h1>SCISSORS</h1>
-        <h1>LIZARD</h1>
-        <h1>SPOCK</h1>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <div class="types">
+          <h1>ROCK</h1>
+          <h1>PAPER</h1>
+          <h1>SCISSORS</h1>
+          <h1>LIZARD</h1>
+          <h1>SPOCK</h1>
+        </div>
+        <div class="score">
+          <h2>SCORE</h2>
+          <h1 id="score">0</h1>
+        </div>
       </div>
-      <div class="score">
-        <h2> SCORE</h2> 
-        <h1 id="score"> 0 </h1>
+      <div class="rules__wrapper" style="display: none">
+        <div class="rules">
+          <h1>RULES</h1>
+          <img
+            class="close"
+            src="./images/icon-close.svg"
+            alt=""
+            onclick="HideRules()"
+          />
+        </div>
+        <img class="rules__img" src="./images/image-rules-bonus.svg" alt="" />
+      </div>
+
+      <div class="pentagon">
+        <img id="pentagon" src="./images/bg-pentagon.svg" alt="" />
+
+        <div class="lizard choices">
+          <img
+            id="lizard"
+            src="./images/icon-lizard.svg"
+            alt=""
+            onclick="showSelection()"
+          />
+        </div>
+        <div class="paper choices">
+          <img
+            id="paper"
+            src="./images/icon-paper.svg"
+            alt=""
+            onclick="showSelection()"
+          />
+        </div>
+        <div class="rock choices">
+          <img
+            id="rock"
+            src="./images/icon-rock.svg"
+            alt=""
+            onclick="showSelection()"
+          />
+        </div>
+        <div class="scissors choices">
+          <img
+            id="scissors"
+            src="./images/icon-scissors.svg"
+            alt=""
+            onclick="showSelection()"
+            />
+        </div>
+        <div class="spock choices">
+          <img
+          id="spock"
+          src="./images/icon-spock.svg"
+            alt=""
+            onclick="showSelection()"
+            />
+          </div>
+        </div>
+          
+      <button id="rules__button" onclick="ShowRules()">Rules</button>
+
+      <div class="results__wrapper">
+        <div class="wrapp">
+          <h1>You Picked</h1>
+        </div>
+        <div id="User__choice"></div>
+
+        <div class="result">
+          <div id="result"></div>
+          <button class="replay" onclick="hideSelection()">PLAY AGAIN</button>
+        </div>
+
+        <div class="wrapp">
+          <h1>The House Picked</h1>
+        </div>
+        <div id="computer__choice"></div>
       </div>
     </div>
-    <div class="rules__wrapper" style="display:none;" >
-      <div class="rules">
-        <h1>RULES</h1>
-          <img class="close" src="./images/icon-close.svg" alt="" onclick="HideRules()">
-      </div>
-      <img class="rules__img" src="./images/image-rules-bonus.svg" alt="">
-    </div>
-    
-    <div class="pentagon">
-      <img id="pentagon" src="./images/bg-pentagon.svg" alt="">
-      
-      <div class="lizard choices">
-        <img id="lizard" src="./images/icon-lizard.svg" alt="" onclick="showSelection()">
-      </div>
-      <div class="paper choices">
-        <img id="paper"  src="./images/icon-paper.svg" alt="" onclick="showSelection()">
-      </div>
-      <div class="rock choices">
-        <img id="rock" src="./images/icon-rock.svg" alt="" onclick="showSelection()">
-      </div>
-      <div class="scissors choices">
-        <img id="scissors" src="./images/icon-scissors.svg" alt="" onclick="showSelection()">
-      </div>
-      <div class="spock choices">
-        <img id="spock" src="./images/icon-spock.svg" alt="" onclick="showSelection()">
-      </div>
-    </div>
-      
 
-    <button id="rules__button" onclick="ShowRules()"> Rules </button> 
-    
-    <div class="results__wrapper" style="display:none;">
-        
-          <h1> You Picked </h1>
-          <div id="User__choice"></div>
-        
-    
-
-      <div class="result">
-        <div id="result"></div>
-        <button class="replay"> PLAY AGAIN  </button> 
-      </div> 
-
-        
-          <h1> The House Picked </h1>
-          <div id="computer__choice"></div>
-        
-     
-
-    </div>
-  </div>
-  
-  <!-- <div class="attribution">
+    <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
-  <script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>

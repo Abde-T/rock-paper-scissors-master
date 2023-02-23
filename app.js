@@ -8,11 +8,15 @@ function showSelection() {
   document.querySelector(" .results__wrapper").style.display = "block";
   document.querySelector(" .pentagon").style.display = "none";
 }
+function hideSelection() {
+  document.querySelector(" .results__wrapper").style.display = "none";
+  document.querySelector(" .pentagon").style.display = "flex";
+}
 
 const computerChoise = document.getElementById("computer__choice");
 const playerChoice = document.getElementById("User__choice");
 const scoreDisplay = document.getElementById("score");
-const resultDisplay = document.getElementById("result");
+const resultsDisplay = document.getElementById("result");
 
 const possibleChoises = Array.from(document.querySelectorAll(".choices"));
 let userChoise;
@@ -23,11 +27,24 @@ let result;
 possibleChoises.forEach((possibleChoise) =>
   possibleChoise.addEventListener("click", (e) => {
     userChoise = e.target.id
-    playerChoice.innerHTML = userChoise;
+    playerChoice.innerHTML = `<div class="${userChoise} choices">
+    <img id="lizard" src="./images/icon-${userChoise}.svg" alt="" onclick="showSelection()">
+  </div>`;
     generateComputerChoice();
     getResult();
   })
 );
+
+function displayResults(results){
+  resultsDisplay.forEach((resultDisplay, idx) => {
+    setTimeout(() =>{
+      resultDisplay.innerHTML =`<div class="${resultDisplay[idx].name} choices">
+      <img id="lizard" src="./images/icon-${resultDisplay[idx].name}.svg" alt="" onclick="showSelection()">
+    </div>`
+    }, idx*1000)
+  })
+
+}
 
 console.log(possibleChoises);
 
@@ -49,7 +66,9 @@ function generateComputerChoice() {
   if (randomNumber === 5) {
     compChoise = "spock";
   }
-  computerChoise.innerHTML = compChoise;
+  computerChoise.innerHTML = `<div class="${compChoise} choices">
+  <img id="lizard" src="./images/icon-${compChoise}.svg" alt="" onclick="showSelection()">
+</div>`;
 }
 
 function getResult() {
@@ -125,6 +144,6 @@ function getResult() {
       scoreDisplay.innerHTML = score
     }
 
-    resultDisplay.innerHTML = result;
+    resultsDisplay.innerHTML = result;
 }
 
