@@ -5,7 +5,7 @@ function HideRules() {
   document.querySelector(" .rules__wrapper").style.display = "none";
 }
 function showSelection() {
-  document.querySelector(" .results__wrapper").style.display = "block";
+  document.querySelector(" .results__wrapper").style.display = "flex";
   document.querySelector(" .pentagon").style.display = "none";
 }
 function hideSelection() {
@@ -26,16 +26,19 @@ let result;
 
 possibleChoises.forEach((possibleChoise) =>
   possibleChoise.addEventListener("click", (e) => {
+    
     userChoise = e.target.id
+    
     playerChoice.innerHTML = `<div class="${userChoise} choices">
     <img id="lizard" src="./images/icon-${userChoise}.svg" alt="" onclick="showSelection()">
-  </div>`;
+    </div>
+    ` ;
     generateComputerChoice();
     getResult();
   })
 );
 
-function displayResults(results){
+/*function displayResults(results){
   resultsDisplay.forEach((resultDisplay, idx) => {
     setTimeout(() =>{
       resultDisplay.innerHTML =`<div class="${resultDisplay[idx].name} choices">
@@ -44,9 +47,9 @@ function displayResults(results){
     }, idx*1000)
   })
 
-}
+}*/
 
-console.log(possibleChoises);
+
 
 function generateComputerChoice() {
   const randomNumber = Math.floor(Math.random() * 5) + 1;
@@ -69,6 +72,7 @@ function generateComputerChoice() {
   computerChoise.innerHTML = `<div class="${compChoise} choices">
   <img id="lizard" src="./images/icon-${compChoise}.svg" alt="" onclick="showSelection()">
 </div>`;
+
 }
 
 function getResult() {

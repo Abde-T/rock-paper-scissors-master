@@ -88,23 +88,40 @@
             onclick="showSelection()"
             />
         </div>
-        <div class="spock choices">
+        <button class="spock choices">
           <img
           id="spock"
           src="./images/icon-spock.svg"
             alt=""
             onclick="showSelection()"
             />
-          </div>
+        </button>
         </div>
           
       <button id="rules__button" onclick="ShowRules()">Rules</button>
 
-      <div class="results__wrapper">
-        <div class="wrapp">
+       <section class="results__wrapper">
+        <div class="wrap">
           <h1>You Picked</h1>
+          <div id="User__choice"> User__choice</div>
         </div>
-        <div id="User__choice"></div>
+        <div class="result">
+          <div id="result"></div>
+          <h1 class="replay" onclick="hideSelection()">PLAY AGAIN</h1>
+        </div>
+        <div class="wrap">
+          <h1>The House Picked</h1>
+          <div id="computer__choice">computer__choice</div>
+        </div>
+        
+
+       </section> 
+
+      <!--<div class="results__wrapper" style="display:flex; justify-content: space-between;">
+        <div class="wrapp">
+          <h1 style="display:flex;">You Picked</h1>
+          <div id="User__choice"> User__choice</div>
+        </div>
 
         <div class="result">
           <div id="result"></div>
@@ -113,9 +130,9 @@
 
         <div class="wrapp">
           <h1>The House Picked</h1>
+          <div id="computer__choice"></div>
         </div>
-        <div id="computer__choice"></div>
-      </div>
+      </div>-->
     </div>
 
     <!-- <div class="attribution">
